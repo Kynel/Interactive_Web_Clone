@@ -20,10 +20,18 @@ a {
 
 /* navigation */
 .global-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 44px;
   padding: 0 1rem;
 }
 .local-nav {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
   height: 52px;
   border-bottom: 1px solid #ddd;
   padding: 0 1rem;
@@ -93,7 +101,7 @@ a {
   font-size: 3rem;
   color: rgb(29, 29, 31);
 }
-.desc-message {
+.sticky-elem.desc-message {
   width: 50%;
   font-weight: bold;
 }
@@ -128,6 +136,22 @@ a {
   background-color: darkorange;
 }
 
+/* interaction, animation */
+.sticky-elem {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem {
+  display: block;
+}
+
+/* media query */
 @media (min-width: 1024px) {
   #scroll-section-0 h1 {
     font-size: 9vw;
@@ -147,7 +171,7 @@ a {
   .main-message small {
     font-size: 1.5vw;
   }
-  .desc-message {
+  .sticky-elem.desc-message {
     width: 20%;
   }
   .mid-message {
